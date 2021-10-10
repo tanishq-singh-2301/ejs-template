@@ -4,7 +4,6 @@ const controller = require('../controller/controller');
 
 // Normal Routes
 route.get('/', services.home);
-route.get('/game/:id', services.game);
 
 // APIs
 route.get('/api/test/', controller.test);
