@@ -1,4 +1,3 @@
-const axios = require('axios');
-const { v4 } = require('uuid');
+const THREE = require('three');
 
-exports.home = (req, res) => res.render('home');
+exports.home = (req, res) => res.render('home', { scene: new THREE.Scene() });
