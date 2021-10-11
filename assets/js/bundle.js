@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"test\": () => (/* binding */ test)\n/* harmony export */ });\nconst { scene } = __webpack_require__(/*! ../scene */ \"./assets/js/experience/scene.js\");\r\nconst THREE = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\r\n\r\nconst test = () => {\r\n    scene.add(new THREE.Mesh(\r\n        new THREE.BoxBufferGeometry(4, 4, 4),\r\n        new THREE.MeshBasicMaterial({\r\n            color: 'gray',\r\n            wireframe: true\r\n        })\r\n    ));\r\n};\r\n\r\n\n\n//# sourceURL=webpack://friendy/./assets/js/experience/utils/test.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"test\": () => (/* binding */ test)\n/* harmony export */ });\nconst { scene } = __webpack_require__(/*! ../scene */ \"./assets/js/experience/scene.js\");\r\nconst THREE = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\r\n\r\nconst test = () => {\r\n    scene.add(new THREE.Mesh(\r\n        new THREE.BoxBufferGeometry(4, 4, 4),\r\n        new THREE.MeshBasicMaterial({\r\n            color: 'dimgray',\r\n            wireframe: true\r\n        })\r\n    ));\r\n};\r\n\r\n\n\n//# sourceURL=webpack://friendy/./assets/js/experience/utils/test.js?");
 
 /***/ }),
 

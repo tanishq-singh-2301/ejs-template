@@ -5,7 +5,7 @@ const test = () => {
     scene.add(new THREE.Mesh(
         new THREE.BoxBufferGeometry(4, 4, 4),
         new THREE.MeshBasicMaterial({
-            color: 'gray',
+            color: 'dimgray',
             wireframe: true
         })
     ));
