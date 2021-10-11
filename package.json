@@ -1,38 +1,27 @@
 {
-  "name": "friendy",
+  "name": "ejs-template-2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "concurrently \"nodemon index.js\" \"webpack --config ./bundler/webpack.dev.js\"",
-    "build": "webpack --config ./bundler/webpack.prod.js"
+    "start": "node app.js",
+    "dev": "concurrently \"nodemon app.js\" \"webpack --config ./webpack/webpack.dev.js\"",
+    "build": "webpack --config ./webpack/webpack.prod.js"
   },
   "keywords": [],
-  "author": "Tanishq Singh",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.22.0",
-    "browserify": "^17.0.0",
+    "concurrently": "^6.3.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "lodash": "^4.17.21",
     "socket.io": "^4.2.0",
     "socket.io-client": "^4.2.0",
-    "three": "^0.133.1",
-    "uuid": "^8.3.2",
-    "webpack-dev-server": "^4.3.1"
+    "three": "^0.133.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
-    "babel-eslint": "^10.1.0",
-    "babelify": "^10.0.0",
-    "concurrently": "^6.3.0",
-    "eslint": "^8.0.0",
     "nodemon": "^2.0.13",
-    "tinyify": "^3.0.0",
     "webpack": "^5.58.1",
     "webpack-cli": "^4.9.0"
   }
