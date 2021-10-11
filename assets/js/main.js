@@ -1,13 +1,13 @@
 const io = require('socket.io-client');
-const THREE = require('three');
-const socket = io();
+const { Experience } = require('./experience/experience');
 
+const socket = io();
 const add = document.querySelector('#add');
 const clear = document.querySelector('#clear');
 const data = document.querySelector('#data');
 const user = document.querySelector('#user');
 
-console.log({ THREE });
+Experience();
 
 add.addEventListener('click', e => {
     e.preventDefault();

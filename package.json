@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "browserify ./assets/js/main.js > ./assets/js/bundle.js -t babelify --plugin tinyify",
-    "dev": "concurrently \"nodemon index.js\" \"watchify ./assets/js/main.js -o ./assets/js/bundle.js -d -v\""
+    "dev": "concurrently \"nodemon index.js\" \"webpack\""
   },
   "keywords": [],
   "author": "Tanishq Singh",
@@ -17,17 +16,23 @@
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "lodash": "^4.17.21",
     "socket.io": "^4.2.0",
     "socket.io-client": "^4.2.0",
     "three": "^0.133.1",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "webpack-dev-server": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
+    "babel-eslint": "^10.1.0",
     "babelify": "^10.0.0",
+    "concurrently": "^6.3.0",
+    "eslint": "^8.0.0",
     "nodemon": "^2.0.13",
     "tinyify": "^3.0.0",
-    "concurrently": "^6.3.0"
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
   }
 }
