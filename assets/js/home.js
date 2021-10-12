@@ -1,78 +1,59 @@
-const THREE = require('three');
-const { OrbitControls } = require('three/examples/jsm/controls/OrbitControls');
+const io = require("socket.io-client");
 const socket = io();
+
+const canvas = document.getElementById('home-webgl');
+const meaning = document.getElementById('meaning');
 
 socket.on('user', res => document.getElementById('current-users').innerText = `online users: ${res.user}`);
 
-class CANVAS {
-    constructor(_options) {
-        this.targetCanvas = _options.targetCanvas;
-        this.clock = new THREE.Clock();
-        this.oldElapsedTime = 0;
-        this.debugObject = {
-            clearColor: '#070404'
-        };
+var ctx = canvas.getContext('2d');
+resize();
 
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight);
-        this.orbitControl = new OrbitControls(this.camera, document.getElementById('home-webgl'));
+var pos = { x: 0, y: 0 };
 
-        this.scene = new THREE.Scene();
+window.addEventListener('resize', resize);
+document.addEventListener('mousemove', draw);
+document.addEventListener('mousedown', setPosition);
+document.addEventListener('mouseenter', setPosition);
 
-        this.renderer = new THREE.WebGL1Renderer({
-            canvas: document.getElementById('home-webgl'),
-            antialias: true,
-            alpha: false
-        });
+function setPosition(e) {
+    pos.x = e.clientX;
+    pos.y = e.clientY;
+}
 
-        this.config();
-        this.update();
-    };
+function resize() {
+    ctx.canvas.width = window.innerWidth;
+    ctx.canvas.height = window.innerHeight;
+}
 
-    config() {
-        this.scene.background = new THREE.Color(this.debugObject.clearColor);
+function draw(e) {
+    if (meaning) meaning.innerText = '';
+    if (e.buttons !== 1) return;
 
-        this.camera.position.set(4, 10, 13);
-        this.scene.add(this.camera);
-        this.orbitControl.enableDamping = true;
+    ctx.beginPath(); // begin
 
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.physicallyCorrectLights = true;
-        this.renderer.shadowMap.enabled = true;
-        this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-        // this.renderer.outputEncoding = THREE.sRGBEncoding;
-        // this.renderer.toneMapping = THREE.LinearToneMapping;
-        // this.renderer.toneMappingExposure = 3;
-    };
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = 'dimgray';
 
-    update() {
-        this.elapsedTime = this.clock.getElapsedTime();
-        this.deltaTime = this.elapsedTime - this.oldElapsedTime;
-        this.oldElapsedTime = this.elapsedTime;
+    ctx.moveTo(pos.x, pos.y); // from
+    setPosition(e);
+    ctx.lineTo(pos.x, pos.y); // to
 
-        this.orbitControl.update();
+    ctx.stroke(); // draw it!
 
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-        this.camera.aspect = window.innerWidth / window.innerHeight;
-        this.camera.updateProjectionMatrix();
-
-        this.renderer.render(this.scene, this.camera);
-
-        window.requestAnimationFrame(() => this.update());
-    };
+    socket.emit('draw', { x: pos.x, y: pos.y });
 };
 
-const canvas = new CANVAS({
-    targetCanvas: 'home-webgl'
+socket.on('draw', res => {
+    ctx.beginPath(); // begin
+
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = 'white';
+
+    ctx.moveTo(res.x, res.y);
+    ctx.lineTo(res.x, res.y);
+
+    ctx.stroke(); // draw it!
 });
-
-const box = new THREE.Mesh(
-    new THREE.BoxBufferGeometry(5, 5, 5),
-    new THREE.MeshBasicMaterial({
-        color: 'dimgray',
-        wireframe: true
-    })
-);
-
-canvas.scene.add(box);
