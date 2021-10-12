@@ -30,14 +30,10 @@ jobs:
     environment: 'Production'
 
     steps:
-      - name: Set up Node.js version
-          uses: actions/setup-node@v2
-          with:
-            node-version: '14.x'
-
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         with:
+          node-version: '14.x'
           app-name: 'ejs-template'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1743AC996B0049D38AA12D4A255844C0 }}
           package: .
