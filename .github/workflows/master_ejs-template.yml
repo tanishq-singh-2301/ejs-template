@@ -26,16 +26,38 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    environment: 'Production'
 
     steps:
       - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'ejs-template'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1743AC996B0049D38AA12D4A255844C0 }}
           package: .
+
+  # build-and-deploy:
+  #   name: Build and Deploy
+  #   runs-on: ubuntu-latest
+  #   environment: production
+  #   steps:
+  #     - uses: actions/checkout@v2
+
+  #     - name: Use Node.js
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: '14.x'
+
+  #     - name: npm install, build, and test
+  #       run: |
+  #         npm install
+  #         npm run build --if-present
+  #         npm run test --if-present
+
+  #     - name: 'Deploy to Azure WebApp'
+  #       uses: azure/webapps-deploy@v2
+  #       with:
+  #         app-name: ${{ env.AZURE_WEBAPP_NAME }}
+  #         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+  #         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
