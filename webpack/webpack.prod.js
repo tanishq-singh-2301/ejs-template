@@ -1,14 +1,7 @@
-const path = require('path')
+const commonConfiguration = require('./webpack.common.js');
+const { merge } = require('webpack-merge');
 
-module.exports = [
-    {
-        name: "home-js",
-        devtool: false,
-        entry: path.resolve(__dirname, '../assets/js/home.js'),
-        output: {
-            filename: 'home.min.js',
-            path: path.resolve(__dirname, '../build/js')
-        },
-        mode: "production"
-    },
-]
+module.exports = merge(commonConfiguration, {
+    mode: 'production',
+    devtool: false
+});
