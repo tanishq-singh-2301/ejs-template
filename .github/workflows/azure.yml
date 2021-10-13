@@ -1,4 +1,4 @@
-name: Build and deploy Node.js app to Azure Web App - ejs-template
+name: Build and deploy Node.js app to Azure Web App - react-webpack-express-boilerplate
 
 on:
   push:
@@ -29,7 +29,9 @@ jobs:
     name: Deploy 
     runs-on: ubuntu-latest
     needs: build
-    environment: 'Production'
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
       - uses: actions/checkout@v2
@@ -42,6 +44,7 @@ jobs:
       - name: 'Deploy to Azure WebApp'
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'ejs-template'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1743AC996B0049D38AA12D4A255844C0 }}
+          app-name: 'react-webpack-express-boilerplate'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EA8F692DE5F94AAC80A797359D940DF9 }}
           package: .  
