@@ -3,5 +3,8 @@ const { merge } = require('webpack-merge');
 
 module.exports = merge(commonConfiguration, {
     mode: 'production',
-    devtool: false
+    devtool: false,
+    devServer: {
+        historyApiFallback: true
+    }
 });

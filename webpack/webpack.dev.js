@@ -3,6 +3,9 @@ const { merge } = require('webpack-merge');
 
 module.exports = merge(commonConfiguration, {
     mode: 'development',
-    watch: true,
-    devtool: 'source-map'
+    devtool: 'source-map',
+    devServer: {
+        watch: true,
+        historyApiFallback: true
+    }
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 const io = require("socket.io-client");
 
-const Home = () => {
+const Dashboard = () => {
     const socket = io();
 
     window.onload = () => {
@@ -10,10 +10,10 @@ const Home = () => {
 
     return (
         <>
-            <h1>Welcome Home</h1>
+            <h1>Dashboard</h1>
             <h1 id='current-users'></h1>
         </>
     )
 };
 
-export default Home;
+export default Dashboard;

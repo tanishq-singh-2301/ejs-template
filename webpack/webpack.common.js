@@ -31,5 +31,5 @@ module.exports = {
                 options: { name: '/static/[name].[ext]' }
             }
         ]
-    },
+    }
 };

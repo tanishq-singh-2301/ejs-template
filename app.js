@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path')
 const app = express();
@@ -7,7 +8,7 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 const port = process.env.PORT || 3000;
 
-app.use(express.static(path.resolve(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.json());
 app.use('/', require('./server/routes/router'));
 
