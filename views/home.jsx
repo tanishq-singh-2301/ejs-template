@@ -1,19 +1,19 @@
 import React from 'react';
 const io = require("socket.io-client");
+import '../assets/css/home.scss';
+import Header from './components/header.jsx';
 
 const Home = () => {
     const socket = io();
-
-    window.onload = () => {
-        socket.on('user', res => document.getElementById('current-users').innerText = `online users: ${res.user}`);
-    };
+    socket.on('user', res => document.getElementById('current-users').innerText = `online users: ${res.user}`);
 
     return (
-        <>
-            <h1>Welcome Home</h1>
+        <section id='home-page'>
+            <Header />
+            <h1 id='greeting' onClick={() => window.open('https://tanishq-singh.herokuapp.com', '_blank')} >made by tanishq singh 🐒</h1>
             <h1 id='current-users'></h1>
-        </>
-    )
+        </section>
+    );
 };
 
 export default Home;

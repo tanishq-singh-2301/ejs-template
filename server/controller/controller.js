@@ -1,1 +1,0 @@
-exports.test = (req, res) => res.json({ working: true }).status(200);

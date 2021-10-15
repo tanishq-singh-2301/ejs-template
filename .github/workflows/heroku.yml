@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: 'Build, heroku webapp'
     runs-on: ubuntu-latest
     environment: production
 
@@ -27,7 +27,7 @@ jobs:
     
 
   deploy:
-    name: Deploy 
+    name: 'Deploy, heroku webapp' 
     runs-on: ubuntu-latest
     needs: build
     environment: 'Production'
