@@ -6,10 +6,10 @@ const SideBar = () => {
     const links = [['/', 'home 🏕️'], ['/three', 'three 🐽'], ['/dashboard', 'dashboard 🛹']];
 
     useEffect(() => {
-        window.onload = () => {
-            var value = document.getElementById('side__bar').style.right;
-            document.getElementById('side__bar').style.right = value === '-400px' ? '5vw' : '-400px';
-        };
+        // window.onload = () => {
+        var value = document.getElementById('side__bar').style.right;
+        document.getElementById('side__bar').style.right = value === '-400px' ? '5vw' : '-400px';
+        // };
     }, []);
 
     return (
