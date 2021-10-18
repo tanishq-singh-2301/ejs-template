@@ -1,6 +1,6 @@
 import React from 'react';
 const io = require("socket.io-client");
-import '../assets/css/home.scss';
+import '../scss/home.scss';
 import Header from './components/header.jsx';
 
 const Home = () => {

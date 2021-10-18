@@ -1,13 +1,13 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import './style.scss';
-import Home from '../views/home.jsx';
-import Dashboard from '../views/dashboard.jsx';
-import Three from '../views/three.jsx';
+import './scss/style.scss';
+import Home from './views/home.jsx';
+import Dashboard from './views/dashboard.jsx';
+import Three from './views/three.jsx';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducers from '../state/reducers';
+import reducers from './state/reducers';
 
 const store = createStore(reducers);
 

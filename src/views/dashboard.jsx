@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/css/dashboard.scss';
+import '../scss/dashboard.scss';
 import Header from './components/header.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { increment, decrement, logIn, logOut } from '../state/actions';

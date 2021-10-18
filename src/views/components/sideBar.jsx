@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import '../../assets/css/sidebar.scss';
+import '../../scss/sidebar.scss';
 import { Link } from 'react-router-dom';
 
 const SideBar = () => {

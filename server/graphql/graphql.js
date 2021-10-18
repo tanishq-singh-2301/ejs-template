@@ -1,6 +1,6 @@
 const { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt, GraphQLNonNull, GraphQLID } = require('graphql');
-const book = require('../schema/book');
-const author = require('../schema/author');
+const book = require('../connection/schema/book');
+const author = require('../connection/schema/author');
 
 const authors = [
     { id: 1, name: 'J. K. Rowling' },

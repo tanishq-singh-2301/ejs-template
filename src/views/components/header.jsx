@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/css/header.scss';
+import '../../scss/header.scss';
 import { Link } from 'react-router-dom';
 import SideBar from './sideBar.jsx';
 

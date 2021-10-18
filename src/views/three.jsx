@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import '../assets/css/three.scss';
+import '../scss/three.scss';
 import Header from './components/header.jsx';
 import Experience from '../models/Experience';
 import * as THREE from 'three';

@@ -1,5 +1,5 @@
 const { Schema } = require('mongoose');
-const mongoose = require('../database/connection');
+const mongoose = require('mongoose');
 
 /* USER SCHEMA, AND MODULE EXPORT */
 module.exports = mongoose.model('test', new Schema({

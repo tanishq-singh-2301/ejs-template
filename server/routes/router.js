@@ -5,7 +5,7 @@ const path = require('path');
 // const { schema } = require('../graphql/graphql');
 
 /** STATICS */
-route.use('/assets', express.static(path.resolve(__dirname, '../../assets')));
+route.use('/assets', express.static(path.resolve(__dirname, '../../public/assets')));
 route.use(express.static(path.resolve(__dirname, '../../dist')));
 
 /** API */

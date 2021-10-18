@@ -5,9 +5,10 @@ const server = require('http').createServer(app);
 const { Server } = require('socket.io');
 const port = process.env.PORT || 3000;
 
-app.use(require('cors')({ origin: 'https://react-webpack-express.herokuapp.com' }))
-app.use(express.json());
-app.use('/', require('./server/routes/router'));
+app
+    .use(require('cors')({ origin: 'https://react-webpack-express.herokuapp.com' }))
+    .use(express.json())
+    .use('/', require('./server/routes/router'));
 
 require('./server/connection/socket-io').socket(new Server(server));
 
