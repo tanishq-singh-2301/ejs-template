@@ -14,7 +14,7 @@ const Dashboard = () => {
             <Header heading={{ title: 'Dashboard', imoji: '👻' }} />
             <main>
                 <div className='container'>
-                    <h1 id='title'>Counter {counter}</h1>
+                    <h1 id='title'>Counter : {counter}</h1>
                     <div id='button-div'>
                         <button className='btn' onClick={() => dispatch(increment())}>+</button>
                         <button className='btn' onClick={() => dispatch(decrement())}>--</button>
@@ -22,10 +22,13 @@ const Dashboard = () => {
                 </div>
 
                 <div className='container'>
-                    <h1 id='title'>Counter {!auth ? 'LOGED OUT' : 'LOGED IN'}</h1>
+                    <h1 id='title'>User : {!auth ? 'LOGGED OUT' : 'LOGGED IN'}</h1>
                     <div id='button-div'>
-                        <button className='btn' onClick={() => dispatch(logIn())}>LogIn</button>
-                        <button className='btn' onClick={() => dispatch(logOut())}>LogOut</button>
+                        {
+                            auth ?
+                                <button className='btn' onClick={() => dispatch(logOut())}>LogOut</button> :
+                                <button className='btn' onClick={() => dispatch(logIn())}>LogIn</button>
+                        }
                     </div>
                 </div>
                 {auth ? <p id='secrect-text'>THIS IS SECRECT TEXT</p> : null}

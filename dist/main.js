@@ -455,7 +455,7 @@ var Dashboard = function Dashboard() {
     className: "container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
     id: "title"
-  }, "Counter ", counter), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "Counter : ", counter), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "button-div"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     className: "btn",
@@ -471,19 +471,19 @@ var Dashboard = function Dashboard() {
     className: "container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
     id: "title"
-  }, "Counter ", !auth ? 'LOGED OUT' : 'LOGED IN'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "User : ", !auth ? 'LOGGED OUT' : 'LOGGED IN'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "button-div"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    className: "btn",
-    onClick: function onClick() {
-      return dispatch((0,_state_actions__WEBPACK_IMPORTED_MODULE_4__.logIn)());
-    }
-  }, "LogIn"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+  }, auth ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     className: "btn",
     onClick: function onClick() {
       return dispatch((0,_state_actions__WEBPACK_IMPORTED_MODULE_4__.logOut)());
     }
-  }, "LogOut"))), auth ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+  }, "LogOut") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: "btn",
+    onClick: function onClick() {
+      return dispatch((0,_state_actions__WEBPACK_IMPORTED_MODULE_4__.logIn)());
+    }
+  }, "LogIn"))), auth ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     id: "secrect-text"
   }, "THIS IS SECRECT TEXT") : null));
 };
