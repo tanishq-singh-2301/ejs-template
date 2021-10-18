@@ -11,7 +11,7 @@ const Dashboard = () => {
 
     return (
         <section id='dashboard-page'>
-            <Header heading={{ title: 'Dashboard', imoji: '👻' }} />
+            <Header heading={{ title: 'Dashboard', imoji: '🛹' }} />
             <main>
                 <div className='container'>
                     <h1 id='title'>Counter : {counter}</h1>

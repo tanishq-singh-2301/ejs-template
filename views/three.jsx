@@ -31,7 +31,7 @@ const Three = () => {
 
     return (
         <section id='three-page'>
-            <Header />
+            <Header heading={{ title: 'Three', imoji: '🐽' }} />
             <canvas id='three-canvas'></canvas>
         </section>
     );

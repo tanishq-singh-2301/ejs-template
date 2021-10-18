@@ -9,7 +9,7 @@ const Home = () => {
 
     return (
         <section id='home-page'>
-            <Header />
+            <Header heading={{ title: 'react webpack express', imoji: '👻' }} />
             <h1 id='greeting' onClick={() => window.open('https://tanishq-singh.herokuapp.com', '_blank')} >made by tanishq singh 🐒</h1>
             <h1 id='current-users'></h1>
         </section>

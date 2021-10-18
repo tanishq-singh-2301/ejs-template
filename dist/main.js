@@ -355,7 +355,7 @@ var Header = function Header(props) {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "home"), " \uD83C\uDFD5\uFE0F"), window.innerWidth > 600 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "header__tag"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, props.heading.title || 'react webpack express'), " ", props.heading.imoji || '👻') : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, props.heading.title), " ", props.heading.imoji) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "header__tag",
     onClick: dropdown__btn,
     id: "dropdown__btn"
@@ -449,7 +449,7 @@ var Dashboard = function Dashboard() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_header_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
     heading: {
       title: 'Dashboard',
-      imoji: '👻'
+      imoji: '🛹'
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "container"
@@ -520,7 +520,12 @@ var Home = function Home() {
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     id: "home-page"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_header_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_header_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    heading: {
+      title: 'react webpack express',
+      imoji: '👻'
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
     id: "greeting",
     onClick: function onClick() {
       return window.open('https://tanishq-singh.herokuapp.com', '_blank');
@@ -623,7 +628,12 @@ var Three = function Three() {
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("section", {
     id: "three-page"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_header_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("canvas", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_header_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    heading: {
+      title: 'Three',
+      imoji: '🐽'
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("canvas", {
     id: "three-canvas"
   }));
 };
