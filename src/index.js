@@ -5,6 +5,11 @@ import './style.scss';
 import Home from '../views/home.jsx';
 import Dashboard from '../views/dashboard.jsx';
 import Three from '../views/three.jsx';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducers from '../state/reducers';
+
+const store = createStore(reducers);
 
 const App = () => {
     return (
@@ -18,4 +23,11 @@ const App = () => {
     );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <React.StrictMode>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
+);
